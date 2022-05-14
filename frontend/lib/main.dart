@@ -1,5 +1,6 @@
 // Importing inbuilt class and module.
 import "package:flutter/material.dart";
+import "package:get/get.dart";
 
 // Importing the dart file that we create
 import "./home/mainfoodpage.dart";
@@ -19,7 +20,7 @@ class FoodApplication extends StatefulWidget {
 class _FoodApplication extends State<FoodApplication> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Food Application",
       home: MainFoodPage(),

@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 import 'package:frontend/home/food_page_body.dart';
 import 'package:frontend/widgets/big_text.dart';
 import "package:frontend/widgets/small_text.dart";
-import "../colors.dart";
+import '../utils/colors.dart';
 
 // Creating MainFoodPage class.
 class MainFoodPage extends StatefulWidget {
@@ -57,7 +57,11 @@ class _MainFoodPage extends State<MainFoodPage> {
               ),
             ),
           ),
-          FoodPageBody(),
+          const Expanded(
+            child: SingleChildScrollView(
+              child: FoodPageBody(),
+            ),
+          ),
         ],
       ),
     );
