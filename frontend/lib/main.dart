@@ -3,7 +3,9 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 
 // Importing the dart file that we create
-import "./home/mainfoodpage.dart";
+// import "../pages/home/mainfoodpage.dart";
+import 'package:frontend/pages/food/popular_food_detail.dart';
+
 
 // Creating main() function from where compilation start.
 void main() {
@@ -23,7 +25,7 @@ class _FoodApplication extends State<FoodApplication> {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Food Application",
-      home: MainFoodPage(),
+      home: PopularFoodDetail(),
     );
   }
 }

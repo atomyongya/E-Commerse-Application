@@ -2,9 +2,10 @@ import 'package:dots_indicator/dots_indicator.dart';
 import "package:flutter/material.dart";
 import 'package:frontend/utils/colors.dart';
 import 'package:frontend/utils/dimensions.dart';
+import 'package:frontend/widgets/app_column.dart';
 import 'package:frontend/widgets/icon_and_text_widget.dart';
 import 'package:frontend/widgets/small_text.dart';
-import "../widgets/big_text.dart";
+import "../../widgets/big_text.dart";
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({Key? key}) : super(key: key);
@@ -246,51 +247,7 @@ class _FoodPageBody extends State<FoodPageBody> {
                     top: Dimensions.height15,
                     left: Dimensions.height15,
                     right: Dimensions.height15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BigText(text: "Chinese momo"),
-                    SizedBox(height: Dimensions.height10),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(
-                              5,
-                              (index) => Icon(Icons.star,
-                                  color: AppColors.mainColor, size: 18)),
-                        ),
-                        SizedBox(width: Dimensions.width10),
-                        SmallText(text: "4.5"),
-                        SizedBox(width: Dimensions.width10),
-                        SmallText(text: "1287"),
-                        SizedBox(width: Dimensions.width10),
-                        SmallText(text: "comments"),
-                      ],
-                    ),
-                    SizedBox(height: Dimensions.height15),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconAndTextWidget(
-                            icon: Icons.circle,
-                            text: "Normal",
-                            iconColor: Colors.yellow.shade400,
-                          ),
-                          SizedBox(width: Dimensions.width10),
-                          IconAndTextWidget(
-                            icon: Icons.location_on,
-                            text: "1.7km",
-                            iconColor: AppColors.mainColor,
-                          ),
-                          SizedBox(width: Dimensions.width10),
-                          IconAndTextWidget(
-                            icon: Icons.access_time_rounded,
-                            text: "32min",
-                            iconColor: AppColors.iconColor2,
-                          ),
-                        ])
-                  ],
-                ),
+                child: const AppColumn(text: "Chinese momo",),
               ),
             ),
           ),
