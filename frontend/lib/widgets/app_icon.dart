@@ -1,11 +1,12 @@
 import "package:flutter/material.dart";
 import 'package:frontend/utils/dimensions.dart';
 
-class AppIcon extends StatelessWidget{
+class AppIcon extends StatelessWidget {
   final IconData icon;
   final Color backgroundColor;
   final Color iconColor;
   final double size;
+  final double iconSize;
 
   const AppIcon({
     Key? key,
@@ -13,21 +14,22 @@ class AppIcon extends StatelessWidget{
     this.backgroundColor = const Color(0xFFfcf4e4),
     this.iconColor = const Color(0xFF756d54),
     this.size = 45,
+    this.iconSize = 16,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
       height: size,
       width: size,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(size/2),
+        borderRadius: BorderRadius.circular(size / 2),
         color: backgroundColor,
       ),
       child: Icon(
         icon,
         color: iconColor,
-        size: Dimensions.icon16,
+        size: iconSize,
       ),
     );
   }

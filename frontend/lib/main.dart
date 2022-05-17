@@ -1,10 +1,11 @@
 // Importing inbuilt class and module.
 import "package:flutter/material.dart";
+import 'package:frontend/pages/food/recommended_food_detail.dart';
 import "package:get/get.dart";
 
 // Importing the dart file that we create
 // import "../pages/home/mainfoodpage.dart";
-import 'package:frontend/pages/food/popular_food_detail.dart';
+// import 'package:frontend/pages/food/popular_food_detail.dart';
 
 
 // Creating main() function from where compilation start.
@@ -25,7 +26,7 @@ class _FoodApplication extends State<FoodApplication> {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Food Application",
-      home: PopularFoodDetail(),
+      home: RecommendedFoodDetail(),
     );
   }
 }
