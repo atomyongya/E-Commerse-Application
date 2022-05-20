@@ -17,7 +17,7 @@ class _MainFoodPage extends State<MainFoodPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [
+        children: [ 
           Container(
             child: Container(
               margin: const EdgeInsets.only(top: 45, bottom: 15),
@@ -59,7 +59,7 @@ class _MainFoodPage extends State<MainFoodPage> {
           ),
           const Expanded(
             child: SingleChildScrollView(
-              child: FoodPageBody(),
+              child: FoodPageBody(),  
             ),
           ),
         ],
