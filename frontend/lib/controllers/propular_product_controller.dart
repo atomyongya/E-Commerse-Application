@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:frontend/data/repository/popular_product_repo.dart';
 import 'package:frontend/models/products_model.dart';
 import 'package:get/get_connect.dart';
@@ -12,15 +13,22 @@ class PopularProductController extends GetxController {
   List<dynamic> _popularProductList = [];
   List<dynamic> get popularProductList => _popularProductList;
 
+  // For data lode
+  bool _isLoaded = false;
+  bool get isLoaded => _isLoaded;
+
   Future<void> getPopularProductList() async {
     // We use Response because repo is sending Response type data and await is use becuase it return Future type data, so we need wait unitl we get data.
     Response response = await popularProductRepo.getPopularProductList();
 
     // Repo return wheather correnct response or fail response. statusCode 200 is successfull.
     if (response.statusCode == 200) {
+      debugPrint("got products");
       _popularProductList = [];
       _popularProductList.addAll(Product.fromJson(response.body).products);
+      // debugPrint(_popularProductList.toString());
+      _isLoaded = true;
       update();
     } else {}
   }
-} 
+}

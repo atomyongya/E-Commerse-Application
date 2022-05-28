@@ -3,13 +3,13 @@ import 'package:frontend/utils/app_constants.dart';
 import 'package:get/get_connect.dart';
 import 'package:get/state_manager.dart';
 
-class PopularProductRepo extends GetxService {
+class RecommendedProductRepo extends GetxService {
   // Repo talk with the API Client and that is related to internet. So, required "GetxService".
   final ApiClient apiClient;
 
-  PopularProductRepo({required this.apiClient});
+  RecommendedProductRepo({required this.apiClient});
 
-  Future<Response> getPopularProductList() async {
-    return await apiClient.getData(AppConstants.POPURL_PRODUCT_URI);
+  Future<Response> getRecommendedProductList() async {
+    return await apiClient.getData(AppConstants.RECOMMENDED_PRODUCT_URI);
   }
 }

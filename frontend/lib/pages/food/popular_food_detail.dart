@@ -1,10 +1,13 @@
 import "package:flutter/material.dart";
+import 'package:frontend/pages/home/mainfoodpage.dart';
 import 'package:frontend/utils/colors.dart';
 import 'package:frontend/utils/dimensions.dart';
 import 'package:frontend/widgets/app_column.dart';
 import 'package:frontend/widgets/app_icon.dart';
 import 'package:frontend/widgets/big_text.dart';
 import 'package:frontend/widgets/expanded_text_widget.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/get_core.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -37,9 +40,14 @@ class PopularFoodDetail extends StatelessWidget {
             right: Dimensions.width20,
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  AppIcon(icon: Icons.arrow_back_ios),
-                  AppIcon(icon: Icons.shopping_cart_outlined),
+                children: [
+                  GestureDetector(
+                    onTap: (() {
+                      Get.to(() => const MainFoodPage());
+                    }),
+                    child: const AppIcon(icon: Icons.arrow_back_ios),
+                  ),
+                  const AppIcon(icon: Icons.shopping_cart_outlined),
                 ]),
           ),
           Positioned(
@@ -67,7 +75,11 @@ class PopularFoodDetail extends StatelessWidget {
                   SizedBox(height: Dimensions.height20),
                   BigText(text: "Introduce"),
                   SizedBox(height: Dimensions.height20),
-                  Expanded(child: SingleChildScrollView(child: ExpandableTextWidget(text: "Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test. Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test. Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test. Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test.Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test. Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test."))),
+                  Expanded(
+                      child: SingleChildScrollView(
+                          child: ExpandableTextWidget(
+                              text:
+                                  "Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test. Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test. Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test. Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test.Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test. Chinese Mono is one of the famous food in china. There are other various food but it suerly give you new test."))),
                 ],
               ),
             ),

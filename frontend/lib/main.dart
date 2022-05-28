@@ -1,7 +1,9 @@
 // Importing inbuilt class and module.
 import "package:flutter/material.dart";
 import 'package:frontend/controllers/propular_product_controller.dart';
-import 'package:frontend/pages/food/recommended_food_detail.dart';
+import 'package:frontend/controllers/recommended_product_controller.dart';
+import 'package:frontend/pages/home/mainfoodpage.dart';
+import 'package:frontend/routes/route_helper.dart';
 import "package:get/get.dart";
 import "helper/dependencies.dart" as dep;
 
@@ -26,14 +28,20 @@ class FoodApplication extends StatefulWidget {
 }
 
 class _FoodApplication extends State<FoodApplication> {
-    
   @override
   Widget build(BuildContext context) {
     Get.find<PopularProductController>().getPopularProductList();
-    return const GetMaterialApp(
+    Get.find<RecommendedProductController>().getRecommendedProductList();
+
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Food Application",
-      home: RecommendedFoodDetail(),
+      home: const MainFoodPage(),
+      // initialRoute: RouteHelper.initial,
+      getPages: RouteHelper.routes,
     );
   }
 }
+
+
+// In 8.04.08
